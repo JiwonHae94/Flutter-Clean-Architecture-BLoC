@@ -1,7 +1,7 @@
 import 'dart:ui';
 
-class GithubRepository{
-  const GithubRepository({
+class GithubRepositoryItem{
+  const GithubRepositoryItem({
     required this.name,
     required this.owner,
     required this.isPrivate,
