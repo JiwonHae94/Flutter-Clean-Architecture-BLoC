@@ -12,7 +12,7 @@ class GithubRepositoryImple extends GithubRepository{
     required this.remoteDataSource
   });
 
-  final GithubRemoteSource remoteDataSource;
+  final GithubItemSource remoteDataSource;
 
   @override
   Future<List<GithubRepositoryItem>> requestRepositories() {
@@ -24,5 +24,4 @@ class GithubRepositoryImple extends GithubRepository{
     // TODO: implement requestUsers
     throw UnimplementedError();
   }
-
 }

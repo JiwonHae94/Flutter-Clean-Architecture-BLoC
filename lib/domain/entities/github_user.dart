@@ -1,7 +1,7 @@
 import 'dart:ffi';
 import 'dart:ui';
 
-class GithubUser{
+class GithubUser {
   const GithubUser({
     required this.id,
     required this.login,
