@@ -1,5 +1,4 @@
 import 'dart:ffi';
-import 'dart:ui';
 
 class GithubUser {
   const GithubUser({
@@ -7,13 +6,11 @@ class GithubUser {
     required this.login,
     required this.avatarUrl,
     required this.name,
-    required this.url
   });
 
   final String login;
-  final Int id;
+  final int id;
   final String avatarUrl;
   final String name;
-  final String url;
 
 }

@@ -7,17 +7,10 @@ import 'package:http/http.dart' as http;
 import '../repositories/common/github_order.dart';
 import '../repositories/common/github_sort.dart';
 
-
 class GithubUserSource{
   // TODO update target url
   static const String baseURL = "https://api.github.com/search/users";
   static const String searchApiUrl = "";
-
-  void requestRepositories(){
-
-  }
-
-
 
   Future<List<GithubUserModel>> requestUsers(
       String keyWord,

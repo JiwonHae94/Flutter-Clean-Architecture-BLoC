@@ -39,6 +39,7 @@ dependencies:
   json_serializable: ^6.2.0
   build_runner: ^2.1.11
   http: ^0.13.4
+  stream_transform: ^2.0.0
 
 dev_dependencies:
   flutter_test:
