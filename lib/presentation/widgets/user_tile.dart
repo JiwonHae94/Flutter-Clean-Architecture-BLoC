@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_clean_architecture_bloc/domain/entities/github_user.dart';
 
 class UserTile extends StatelessWidget {
-  UserTile(this.dummyData);
+  UserTile(this.user);
 
-  final String dummyData;
+  final GithubUser user;
 
   @override
   Widget build(BuildContext context) {
@@ -13,13 +14,13 @@ class UserTile extends StatelessWidget {
         children: [
           ListTile(
             leading: Hero(
-              tag: dummyData,
+              tag: user.id,
               child: CircleAvatar(
-                backgroundImage: NetworkImage(dummyData),
+                backgroundImage: NetworkImage(user.avatarUrl),
               ),
             ),
-            title: Text(dummyData),
-            subtitle: Text(dummyData)
+            title: Text(user.login),
+            subtitle: Text("github user")
           ),
           Divider(
             thickness: 2.0,

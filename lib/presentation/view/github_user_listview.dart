@@ -4,7 +4,6 @@ import 'package:flutter_clean_architecture_bloc/presentation/widgets/user_tile.d
 
 import '../../bloc/github_user_bloc.dart';
 
-
 class GithubUserListView extends StatelessWidget {
   const GithubUserListView({Key? key}) : super(key: key);
 
@@ -14,10 +13,37 @@ class GithubUserListView extends StatelessWidget {
     final githubUserState = cubit.state;
 
     return Scaffold(
-      body: ListView.builder(itemBuilder: (context, i){
-        return UserTile(githubUserState.elementAt(i).toString());
-      },
-      itemCount: githubUserState.length// githubUserState.length,
+      body: Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              onSubmitted: (value) {
+                print(value);
+                cubit.search(value);
+              },
+              decoration: InputDecoration(
+                  labelText: "Search keyword",
+                  hintText: "Search keyword",
+                  prefixIcon: Icon(Icons.search),
+                  border:
+                      OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(25.0)))),
+            ),
+          ),
+          Expanded(
+              child: ListView.builder(
+            itemBuilder: (context, i) {
+
+              if(i >= githubUserState.length){
+
+              }
+
+
+              return UserTile(githubUserState.elementAt(i));
+            },
+            itemCount: githubUserState.length,
+          ))
+        ],
       ),
     );
   }
