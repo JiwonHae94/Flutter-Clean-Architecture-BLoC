@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_architecture_bloc/presentation/screen/home_page.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 void main() {
   runApp(const MyApp());
@@ -58,15 +57,6 @@ class _MyHomePageState extends State<MyHomePage> {
     _items.add(Random().nextInt(_items.length));
   }
 
-  void _showToast(String msg){
-    print("toast clicked ${msg}");
-    Fluttertoast.showToast(msg: msg,
-      backgroundColor: Colors.white,
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.BOTTOM
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -97,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Icons.star
                   ),
                   onTap: (){
-                    _showToast("${_items[index]}");
+
                   },
                 );
               }

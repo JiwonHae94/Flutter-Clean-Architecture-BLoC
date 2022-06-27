@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(title: const Text("Github User API")),
       body: BlocProvider(
-        create: (_) => GithubUserCubit(GithubUserUsecase(GithubUserRepositoryImpl(GithubUserSource())))..search("test"),
+        create: (_) => GithubUserCubit(GithubUserUsecase(GithubUserRepositoryImpl(GithubUserRemoteSource())))..search("test"),
         child: const GithubUserListView()
       )
     );
