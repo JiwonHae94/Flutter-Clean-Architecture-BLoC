@@ -22,12 +22,13 @@ class GithubUserSource{
     // TODO add order and sort to the query
     final query = "$baseURL/q=$keyWord";
     final response = await http.get(Uri.parse(query));
+    print("request users ${response.statusCode}");
 
-    if(response.statusCode == 200){
-      print("here");
-    } else{
-      throw Exception("failed to load github items");
-    }
+    // if(response.statusCode == 200){
+    //   print("here");
+    // } else{
+    //   throw Exception("failed to load github items");
+    // }
     return List.empty();
   }
 

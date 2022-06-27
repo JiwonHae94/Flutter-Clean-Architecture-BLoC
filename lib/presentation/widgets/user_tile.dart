@@ -4,6 +4,7 @@ class UserTile extends StatelessWidget {
   UserTile(this.dummyData);
 
   final String dummyData;
+
   @override
   Widget build(BuildContext context) {
     return Padding(

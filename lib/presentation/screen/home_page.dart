@@ -1,28 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_clean_architecture_bloc/bloc/github_user_bloc.dart';
+import 'package:flutter_clean_architecture_bloc/data/repositories/github_user_repository.dart';
+import 'package:flutter_clean_architecture_bloc/domain/usecases/github_user_usecase.dart';
 
+import '../../data/source/github_remote_source.dart';
+import '../view/github_user_listview.dart';
 import '../widgets/user_tile.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  List<String> dummies = ["one", "two", "three"];
+class HomePage extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Github User Search"),
-      ),
-      body: SafeArea(
-        child : ListView.builder(itemBuilder: (context, index){
-          return UserTile(dummies[index]);
-        })
-      ),
+      appBar: AppBar(title: const Text("Github User API")),
+      body: BlocProvider(
+        create: (_) => GithubUserCubit(GithubUserUsecase(GithubUserRepositoryImpl(GithubUserSource())))..search("test"),
+        child: const GithubUserListView()
+      )
     );
   }
 }
