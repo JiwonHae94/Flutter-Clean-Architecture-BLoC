@@ -12,7 +12,7 @@ abstract class GithubUserRepository{
 class GithubUserRepositoryImpl extends GithubUserRepository{
   GithubUserRepositoryImpl(this.githubItemSource);
 
-  final GithubUserSource githubItemSource;
+  final GithubUserRemoteSource githubItemSource;
 
   /// converts model into entity
   @override
